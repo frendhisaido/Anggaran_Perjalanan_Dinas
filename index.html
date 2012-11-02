@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+		<title>index</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Frendhi Saido Danaro" />
+
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<link href='http://fonts.googleapis.com/css?family=Headland+One|Sanchez' rel='stylesheet' type='text/css'>
+		<style>
+		    body {
+                font-style: normal;
+                font-variant: normal;
+                font-weight: normal;
+                font-size: 10pt;
+                line-height: normal;
+                font-family: 'Arial Narrow';
+            }
+            
+            header{
+             font-family: 'Headland One', serif;
+            }
+                
+            footer{
+                overflow: auto;
+                     width: 100%
+            }
+            .over:hover{
+                fill: #fff;
+            }
+            .container{
+                margin-left: auto;
+                margin-right: auto;
+                width: 80%;
+            }
+            .centertext {
+                text-align: center;
+            }
+            .narasi{
+                font-family: 'Sanchez', serif;
+                font-size: 1em;
+                width: 700px;
+                text-align: justify;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            
+            .showus:hover{
+                fill: #e69500;
+            }
+            .hide{
+                display: none;
+            }
+            #infographic{
+                margin-left: auto;
+                margin-right: auto;
+                width: 900px;
+            }
+
+
+		</style>
+		<script type="text/javascript" src="http://localhost/d3/d3.v2.min.js"></script>
+		<script type="text/javascript" src="http://localhost/d3/d3.geom.js"></script>
+        <script type="text/javascript" src="http://localhost/d3/d3.layout.js"></script>
+	</head>
+
+	<body >
+		<div class="container">
+			<header class="centertext">
+				<h1>Penyelewengan Dana Anggaran Perjalanan Dinas</h1>
+			</header>
+	
+            <article>
+                 <p class="narasi">
+                    Juni 2012 lalu, acara MataNajwa membahas tema tentang penyelewengan anggaran dinas negara.
+                    Diantara modus-modus korupsi yang sangat beragam dan kadang kreatif, yang ini lebih menarik perhatian saya.
+                    Karena oh karena, memanipulasi anggaran perjalanan dinas sudah dianggap menjadi hal yang biasa.   
+                    Tinjau penggalan artikel berikut.    
+                   <blockquote class="centertext">
+                                            ”Modus-modus yang ditemukan BPK lucu-lucu. <strong>Ada satu orang ditemukan melakukan perjalanan ke dua tempat yang berbeda pada tanggal yang sama. Ada juga perjalanan dinas yang diatur, padahal PNS-nya tidak melakukan perjalanan. Uang yang sudah terkumpul kemudian dibagi-bagi di akhir tahun. Ada juga penggelembungan melalui tiket fiktif, lamanya perjalanan misalkan dari 5 hari ditulis menjadi 10 hari,” </strong> kata Yuna.
+                   ( <i>Sumber: </i><a href="http://jdih.lemsaneg.go.id/detail.php?m=BI&id=230">jdih.lemsaneg.go.id</a> )
+                   </blockquote>
+                 </p>
+                 
+                  <p class="narasi">
+                     Baiklah, akhirnya saya memutuskan untuk menggunakan data yang ditampilkan pada acara MataNajwa untuk menghasilkan infografik dibawah ini. 
+                     Dan untuk efek <i>surprise</i>, saya sengaja tidak langsung menampilkan nama lembaganya.
+                     Sila klik persegi berwarna oranye disebelah kanan untuk mengetahui nama lembaganya.  
+                 </p>
+            </article>
+            <!--
+                infografik berikut dibuat menggunakan D3.js
+            -->
+			<div id="infographic">
+
+			</div>
+			
+			<article>
+			 <p class="narasi">
+                 Total sekitar 67 Milyar dana yang diselewengkan dalam data diatas.
+                 Jumlah yang sangat besar kalau kita lihat dengan cara "Wah, coba kalau dipake betulin sekolah atau beasiswa!".
+                 Sayang sekali saya lupa waktu dan dari mana data ini didapatkan oleh MataNajwa. 
+                 Namun saya mendapatkan informasi tentang anggaran perjalanan dinas APBN 2010 dalam artikel <a href="http://jdih.lemsaneg.go.id/detail.php?m=BI&id=230">berikut.</a>
+                 
+             </p>
+             <p class="narasi">
+                 Klik <a href="javascript:toggle('tweet')">disini</a> untuk menampilkan tweet dari akun twitter @MataNajwa dimana saya mendapatkan sumber data untuk infografik di atas.          
+                 </p>
+			   <div id="tweet" style="display: none;">
+			    
+			     <blockquote class="twitter-tweet tw-align-center"><p>1. Kementerian kesehatan (Rp 36,5 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212922599271956481" data-datetime="2012-06-13T15:01:18+00:00">June 13, 2012</a></blockquote>
+                
+                
+                <blockquote class="twitter-tweet tw-align-center"><p>2. Kementerian Dalam Negeri (Rp 9 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212922688740671489" data-datetime="2012-06-13T15:01:39+00:00">June 13, 2012</a></blockquote>
+ 
+                
+                <blockquote class="twitter-tweet tw-align-center"><p>3. Mahkamah Agung (Rp 4,79 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212922728884355072" data-datetime="2012-06-13T15:01:49+00:00">June 13, 2012</a></blockquote>
+
+
+                <blockquote class="twitter-tweet tw-align-center"><p>4. Kementerian Perumahan Rakyar (Rp 4,01 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212922769187414017" data-datetime="2012-06-13T15:01:58+00:00">June 13, 2012</a></blockquote>
+
+
+                <blockquote class="twitter-tweet tw-align-center"><p>5. BPKP (Rp 3,14 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212922814519459841" data-datetime="2012-06-13T15:02:09+00:00">June 13, 2012</a></blockquote>
+
+
+                <blockquote class="twitter-tweet tw-align-center"><p>6. Kementerian Pendidikan Nasional (RP 2,89 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212922856571543553" data-datetime="2012-06-13T15:02:19+00:00">June 13, 2012</a></blockquote>
+
+
+                <blockquote class="twitter-tweet tw-align-center"><p>7. BMKG (Rp 2,71 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212922925437812736" data-datetime="2012-06-13T15:02:35+00:00">June 13, 2012</a></blockquote>
+
+
+                <blockquote class="twitter-tweet tw-align-center"><p>8. Kementerian Sekretariat Negara (Rp 1,6 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212922981352079360" data-datetime="2012-06-13T15:02:49+00:00">June 13, 2012</a></blockquote>
+
+
+                <blockquote class="twitter-tweet tw-align-center"><p>9. Kementerian Pendayagunaan Aparatur Negara(Rp 1,37 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212923066194460673" data-datetime="2012-06-13T15:03:09+00:00">June 13, 2012</a></blockquote>
+
+
+                <blockquote class="twitter-tweet tw-align-center"><p>10. Depkominfo (Rp 1,03 M)</p>&mdash; Mata Najwa (@MataNajwa) <a href="https://twitter.com/MataNajwa/status/212923125371908096" data-datetime="2012-06-13T15:03:23+00:00">June 13, 2012</a></blockquote>
+               
+			 </div>   
+        
+			</article>
+
+			<footer>
+				<p>
+					&copy; Copyright  by Frendhi Saido Danaro
+				</p>
+			</footer>
+		</div>
+		
+		<script type="text/javascript" src="init.js"></script>
+		<script src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+	</body>
+</html>
